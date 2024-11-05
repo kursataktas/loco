@@ -1,51 +1,58 @@
- <div align="center">
+<div align="center">
 
    <img src="https://github.com/loco-rs/loco/assets/83390/992d215a-3cd3-42ee-a1c7-de9fd25a5bac"/>
 
-   <h1>Loco vous souhaite la bienvenue</h1>
+   <h1>Welcome to Loco</h1>
 
    <h3>
-🚂 Loco c'est Rust on Rails. 
+   <!-- <snip id="description" inject_from="yaml"> -->
+🚂 Loco is Rust on Rails.
+<!--</snip> -->
    </h3>
 
    [![crate](https://img.shields.io/crates/v/loco-rs.svg)](https://crates.io/crates/loco-rs)
    [![docs](https://docs.rs/loco-rs/badge.svg)](https://docs.rs/loco-rs)
    [![Discord channel](https://img.shields.io/badge/discord-Join-us)](https://discord.gg/fTvyBzwKS8)
+   [![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20Loco%20Guru-006BFF)](https://gurubase.io/g/loco)
 
  </div>
 
-[English](./README.md) · [中文](./README-zh_CN.md) · Français · [Portuguese (Brazil)](./README-pt_BR.md) ・ [日本語](./README.ja.md)
-
-## À propos de Loco
-`Loco` est fortement inspiré de Rails. Si vous connaissez Rails et Rust, vous vous sentirez chez vous. Si vous ne connaissez que Rails et que vous êtes nouveau sur Rust, vous trouverez Loco rafraîchissant. Nous ne supposons pas que vous connaissez Rails.
-Pour un aperçu plus approfondie du fonctionnement de Loco, y compris des guides détaillés, des exemples et des références API, consultez notre [site Web de documentation](https://loco.rs).
-
-## Caractéristiques de Loco:
-
-* `Convention plutôt que configuration`: Semblable à Ruby on Rails, Loco met l'accent sur la simplicité et la productivité en réduisant le besoin de code passe-partout. Il utilise des valeurs par défaut raisonnables, permettant aux développeurs de se concentrer sur l'écriture de la logique métier plutôt que de consacrer du temps à la configuration.
-
-* `Développement rapide`: Visant une productivité élevée des développeurs, la conception de Loco se concentre sur la réduction du code passe-partout et la fourniture d'API intuitives, permettant aux développeurs d'intégrer rapidement et de créer des prototypes avec un minimum d'effort.
-
-* `Intégration ORM`: Modélisez avec des entités robustes, éliminant le besoin d'écrire du SQL. Définissez les relations, la validation et la logique sur mesure directement sur vos entités pour une maintenabilité et une évolutivité améliorées.
-
-* `Contrôleurs`: Gérez les paramètres et le contenu des requêtes Web, la validation des requêtes et affichez une réponse tenant compte du contenu. Nous utilisons Axum pour une meilleure performance, simplicité et extensibilité. Les contrôleurs vous permettent également de créer facilement des middlewares, qui peuvent être utilisés pour ajouter une logique telle que l'authentification, la journalisation (logging) ou la gestion des erreurs avant de transmettre les requêtes aux actions du contrôleur principal.
-
-* `Vues`: Loco peut s'intégrer aux moteurs de _templates_ pour générer du contenu HTML dynamique à partir de modèles template.
-
-* `Tâches en arrière-plan`: Effectuer des calculs informatiques ou d'I/O (Entrée/Sortie) intensives en arrière-plan avec une file d'attente sauvegardée Redis ou avec des threads. Implémenter un travailleur (worker) est aussi simple que d'implémenter une fonction d'exécution pour le trait Worker.
-
-* `Scheduler`: Simplifie le système crontab traditionnel, souvent encombrant, en rendant plus facile et plus élégante la planification de tâches ou de scripts shell.
-
-* `Mailers`: Un logiciel de messagerie enverra des e-mails en arrière-plan en utilisant l'infrastructure de travail d'arrière-plan de Loco existante. Tout se passera sans problème pour vous.
-
-* `Stockage`: Loco Storage facilite le travail avec des fichiers via plusieurs opérations. Le stockage peut être en mémoire, sur disque ou utiliser des services cloud tels qu'AWS S3, GCP et Azure.
-
-* `Cache :` Loco fournit une strate cache pour améliorer les performances des applications en stockant les données fréquemment consultées.
-
-Pour en savoir plus sur les fonctionnalités de Loco, consultez notre [site Web de documentation](https://loco.rs/docs/getting-started/tour/).
+English · [中文](./README-zh_CN.md) · [Français](./README.fr.md) · [Portuguese (Brazil)](./README-pt_BR.md) ・ [日本語](./README.ja.md)
 
 
-## Commencez rapidement
+## What's Loco?
+`Loco` is strongly inspired by Rails. If you know Rails and Rust, you'll feel at home. If you only know Rails and new to Rust, you'll find Loco refreshing. We do not assume you know Rails.
+
+For a deeper dive into how Loco works, including detailed guides, examples, and API references, check out our [documentation website](https://loco.rs).
+
+
+## Features of Loco:
+
+* `Convention Over Configuration:` Similar to Ruby on Rails, Loco emphasizes simplicity and productivity by reducing the need for boilerplate code. It uses sensible defaults, allowing developers to focus on writing business logic rather than spending time on configuration.
+
+* `Rapid Development:` Aim for high developer productivity, Loco’s design focuses on reducing boilerplate code and providing intuitive APIs, allowing developers to iterate quickly and build prototypes with minimal effort.
+
+* `ORM Integration:` Model your business with robust entities, eliminating the need to write SQL. Define relationships, validation, and custom logic directly on your entities for enhanced maintainability and scalability.
+
+* `Controllers`: Handle web requests parameters, body, validation, and render a response that is content-aware. We use Axum for the best performance, simplicity, and extensibility. Controllers also allow you to easily build middlewares, which can be used to add logic such as authentication, logging, or error handling before passing requests to the main controller actions.
+
+* `Views:` Loco can integrate with templating engines to generate dynamic HTML content from templates.
+
+* `Background Jobs:` Perform compute or I/O intensive jobs in the background with a Redis backed queue, or with threads. Implementing a worker is as simple as implementing a perform function for the Worker trait.
+
+* `Scheduler:` Simplifies the traditional, often cumbersome crontab system, making it easier and more elegant to schedule tasks or shell scripts.
+
+* `Mailers:` A mailer will deliver emails in the background using the existing loco background worker infrastructure. It will all be seamless for you.
+
+* `Storage:` In Loco Storage, we facilitate working with files through multiple operations. Storage can be in-memory, on disk, or use cloud services such as AWS S3, GCP, and Azure.
+
+* `Cache:` Loco provides an cache layer to improve application performance by storing frequently accessed data.
+
+So see more Loco features, check out our [documentation website](https://loco.rs/docs/getting-started/tour/).
+
+
+
+## Getting Started
 <!-- <snip id="quick-installation-command" inject_from="yaml" template="sh"> -->
 ```sh
 cargo install loco-cli
@@ -53,7 +60,7 @@ cargo install sea-orm-cli # Only when DB is needed
 ```
 <!-- </snip> -->
 
-Vous pouvez maintenant créer votre nouvelle application (choisissez "`SaaS` app").
+Now you can create your new app (choose "`SaaS` app").
 
 
 <!-- <snip id="loco-cli-new-from-template" inject_from="yaml" template="sh"> -->
@@ -70,8 +77,7 @@ myapp/
 ```
 <!-- </snip> -->
 
-Maintenant, faite `cd` dans votre `myapp` et démarrez votre application:
-
+ Now `cd` into your `myapp` and start your app:
 <!-- <snip id="starting-the-server-command-with-output" inject_from="yaml" template="sh"> -->
 ```sh
 $ cargo loco start
@@ -96,14 +102,14 @@ listening on port 5150
 ```
 <!-- </snip> -->
 
-## Servi par Loco
-+ [SpectralOps](https://spectralops.io) - divers services servi par le framework Loco
-+ [Nativish](https://nativi.sh) - app backend servi par le framework Loco
+## Powered by Loco
++ [SpectralOps](https://spectralops.io) - various services powered by Loco
+  framework
++ [Nativish](https://nativi.sh) - app backend powered by Loco framework
 
-## Contributeurs ✨
-Merci à ces personnes formidables :
+## Contributors ✨
+Thanks goes to these wonderful people:
 
 <a href="https://github.com/loco-rs/loco/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=loco-rs/loco" />
 </a>
-
